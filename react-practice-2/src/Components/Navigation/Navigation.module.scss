@@ -1,0 +1,19 @@
+.nav_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  height: 72px;
+  margin: 0 auto;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    font-weight: 550;
+
+    li {
+      cursor: pointer;
+    }
+  }
+}

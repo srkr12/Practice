@@ -1,0 +1,104 @@
+* {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.main {
+  .header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1280px;
+    height: 71px;
+
+    ul {
+      font-size: 16px;
+      font-weight: 600;
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      color: #2e2e2e;
+
+      li {
+        cursor: pointer;
+      }
+    }
+
+    button {
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      background-color: #d01c28;
+      padding: 6px 16px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  .hero-wrap {
+    margin: 0 auto;
+    max-width: 1280px;
+    height: calc(100vh - 71px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .text-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+
+      h1 {
+        font-size: 108px;
+        font-weight: 800;
+        line-height: 102px;
+        margin: 0;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 600;
+        color: #5a5959;
+        width: 404px;
+        line-height: 24px;
+        margin: 0;
+      }
+
+      .button-wrap {
+        display: flex;
+        gap: 40px;
+
+        .shop-button {
+          font-size: 24px;
+          font-weight: 500;
+          color: #fff;
+          background-color: #d01c28;
+          padding: 6px 16px;
+          border: none;
+          cursor: pointer;
+        }
+
+        .category-button {
+          font-size: 24px;
+          font-weight: 500;
+          color: #5a5959;
+          padding: 6px 16px;
+          background: transparent;
+          border: 2px solid #5a5959;
+          cursor: pointer;
+        }
+      }
+
+      span {
+        font-size: 16px;
+        font-weight: 500;
+        color: #5a5959;
+      }
+
+      .brand-icon-wrap {
+        display: flex;
+        gap: 16px;
+      }
+    }
+  }
+}
