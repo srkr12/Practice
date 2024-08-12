@@ -3,7 +3,7 @@ import styles from "./Navigation.module.scss";
 function Navigation() {
   return (
     <nav className={styles.nav_bar}>
-      <img src="Images/logo.svg" alt="logo icon" />
+      <img src="Images/logo.png" alt="logo icon" />
 
       <ul>
         <li href="#">Home</li>
