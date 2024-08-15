@@ -1,0 +1,127 @@
+.main_container {
+  background-color: #333;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 170px;
+    padding: 0 120px;
+
+    .page_name {
+      color: #fff;
+      font-size: 32px;
+      font-weight: 700;
+
+      span {
+        color: #ff0000;
+      }
+    }
+
+    .search_bar {
+      input {
+        border: 1px solid #ff0909;
+        background: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+      }
+
+      ::placeholder {
+        color: white;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 30px;
+
+    li {
+      width: fit-content;
+      background-color: #ff4343;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #d63636;
+      }
+    }
+  }
+
+  .food_wrap {
+    background-image: url(/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: auto;
+    height: calc(100vh - 230px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .food_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px 20px;
+
+      .food_cart {
+        width: 340px;
+        height: 170px;
+        border: 1px solid #fff;
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
+/* Mobile devices (up to 767px) */
+@media (max-width: 767px) {
+  .main_container {
+    width: 420px;
+
+    header {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 50px 0 24px 0;
+      height: max-content;
+    }
+
+    ul {
+      gap: 10px;
+    }
+
+    .food_wrap {
+      height: fit-content;
+
+      .food_grid {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20px;
+        padding: 25px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main_container {
+    width: fit-content;
+
+    .food_wrap {
+      height: fit-content;
+
+      .food_grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
+        padding: 50px;
+      }
+    }
+  }
+}
