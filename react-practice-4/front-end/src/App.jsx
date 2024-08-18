@@ -7,11 +7,22 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
-    // Fetch data from the backend
+    const fallbackData = [
+      // ... provide some static data here
+    ];
+
     fetch("http://localhost:9000/")
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
       .then((data) => setFoodData(data))
-      .catch((error) => console.error("Error fetching data:", error));
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setFoodData(fallbackData); // Use fallback data if fetch fails
+      });
   }, []);
 
   // Filter the food data based on the search term and selected category
