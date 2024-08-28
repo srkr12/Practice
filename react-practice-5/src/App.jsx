@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import SearchBox from "./components/SearchBox";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "./config/firebase";
+import AddEditContactModal from "./components/AddEditContactModal";
 
 function App() {
   const [contacts, setContacts] = useState([]);
@@ -44,14 +45,17 @@ function App() {
   };
 
   // Filter contacts based on the search query
-  const filteredContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredContacts = contacts.filter(
+    (contact) =>
+      contact.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      contact.email.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
-    <div className="m-4 flex flex-col gap-[22px]">
+    <div className="m-4 flex flex-col gap-[22px] max-w-[400px]">
       <Navbar />
       <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <AddEditContactModal />
 
       <div className="contact-wrap">
         {filteredContacts.length === 0 ? (
@@ -75,7 +79,7 @@ function App() {
                   <img src="contact-img.png" alt="contact logo" />
 
                   <ul>
-                    <li>{contact.name}</li>
+                    <li className="font-medium text-base">{contact.name}</li>
                     <li>{contact.email}</li>
                   </ul>
                 </div>
