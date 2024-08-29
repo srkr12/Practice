@@ -18,10 +18,12 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
   const [currentContact, setCurrentContact] = useState(null); // State for current contact data
+  const [loading, setLoading] = useState(true);
 
   //fetching data from backend
   useEffect(() => {
     const getContacts = async () => {
+      setLoading(true); // Start loading
       try {
         const contactsRef = collection(db, "contacts");
         const contactsSnapshot = await getDocs(contactsRef);
@@ -35,6 +37,8 @@ function App() {
         setContacts(contactLists);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false); // Stop loading
       }
     };
 
@@ -86,7 +90,7 @@ function App() {
   const filteredContacts = contacts.filter(
     (contact) =>
       contact.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      contact.email.toLowerCase().includes(searchQuery.toLowerCase())
+      contact.phoneNumber.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
@@ -99,7 +103,9 @@ function App() {
       />
 
       <div className="contact-wrap">
-        {filteredContacts.length === 0 ? (
+        {loading ? (
+          <p className="text-white font-semibold text-[24px]">Loading...</p>
+        ) : filteredContacts.length === 0 ? (
           <div className="empty-contact flex flex-col items-center justify-center">
             <img
               src="empty-contact.svg"
@@ -121,18 +127,22 @@ function App() {
 
                   <ul>
                     <li className="font-medium text-base">{contact.name}</li>
-                    <li>{contact.email}</li>
+                    <li>{contact.phoneNumber}</li>
                   </ul>
                 </div>
 
-                <div className="flex gap-4">
-                  <button onClick={() => handleEdit(contact)}>
-                    <img src="edit.png" alt="edit contact icon" />
-                  </button>
+                <div className="flex items-center  justify-center gap-2">
+                  <img
+                    src="edit.png"
+                    alt="edit contact icon"
+                    onClick={() => handleEdit(contact)}
+                  />
 
-                  <button onClick={() => handleDelete(contact.id)}>
-                    <img src="delete.png" alt="delete icon" />
-                  </button>
+                  <img
+                    src="delete.png"
+                    alt="delete icon"
+                    onClick={() => handleDelete(contact.id)}
+                  />
                 </div>
               </div>
             ))}

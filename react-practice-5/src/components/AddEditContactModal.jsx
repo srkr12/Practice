@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 
 function AddEditContactModal({ type = "add", onSubmit, onClose, initialData }) {
-  // State to hold name and email input values
+  // State to hold name and phoneNumber input values
   const [name, setName] = useState(initialData?.name || "");
-  const [email, setEmail] = useState(initialData?.email || "");
+  const [phoneNumber, setPhoneNumber] = useState(
+    initialData?.phoneNumber || ""
+  );
 
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name || !email) {
-      alert("Both name and email are required.");
+    if (!name || !phoneNumber) {
+      alert("Both name and phone number are required.");
       return;
     }
     // Call the onSubmit function passed as a prop with the contact details
-    onSubmit({ name, email });
+    onSubmit({ name, phoneNumber });
   };
 
   return (
@@ -32,14 +34,14 @@ function AddEditContactModal({ type = "add", onSubmit, onClose, initialData }) {
         </div>
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="phoneNumber">Phone Number</label>
           <input
             type="text"
-            id="email"
+            id="phoneNumber"
             className="border-[1px] p-1 border-black h-10 rounded"
-            placeholder="Enter the email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter the phone number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
           />
         </div>
 
@@ -54,7 +56,7 @@ function AddEditContactModal({ type = "add", onSubmit, onClose, initialData }) {
           <button
             type="button"
             onClick={onClose}
-            className=" p-2 bg-[#ff2c2c] text-black rounded w-[150px]"
+            className=" p-2 bg-[#ff2c2c] text-white rounded w-[150px]"
           >
             <p>Close</p>
           </button>
