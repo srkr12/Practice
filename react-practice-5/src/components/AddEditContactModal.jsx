@@ -36,9 +36,21 @@ function AddEditContactModal({ type = "add", onSubmit }) {
           />
         </div>
 
-        <button type="submit" className=" p-2 bg-yellow text-black rounded ">
-          <p>{type === "add" ? "Add" : "Update"} Contact</p>
-        </button>
+        <div className="flex items-center justify-center gap-[11px]">
+          <button
+            type="submit"
+            className=" p-2 bg-yellow text-black rounded w-[150px]"
+          >
+            <p>{type === "add" ? "Add" : "Update"} Contact</p>
+          </button>
+
+          <button
+            type="submit"
+            className=" p-2 bg-[#ff2c2c] text-black rounded w-[150px]"
+          >
+            <p>Close</p>
+          </button>
+        </div>
       </form>
     </div>
   );

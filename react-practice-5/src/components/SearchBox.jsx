@@ -23,9 +23,9 @@ function SearchBox({ searchQuery, setSearchQuery }) {
         />
       </div>
 
-      <div className="w-[52px] bg-white rounded-[50%] p-[12px] cursor-pointer">
+      <button className="w-[52px] bg-white rounded-[50%] p-[12px] cursor-pointer">
         <img className="min-w-[18px]" src="plus.png" alt="add icon" />
-      </div>
+      </button>
     </div>
   );
 }

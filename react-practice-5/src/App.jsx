@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import SearchBox from "./components/SearchBox";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "./config/firebase";
-import AddEditContactModal from "./components/AddEditContactModal";
 
 function App() {
   const [contacts, setContacts] = useState([]);
@@ -55,7 +54,6 @@ function App() {
     <div className="m-4 flex flex-col gap-[22px] max-w-[400px]">
       <Navbar />
       <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <AddEditContactModal />
 
       <div className="contact-wrap">
         {filteredContacts.length === 0 ? (
@@ -85,12 +83,13 @@ function App() {
                 </div>
 
                 <div className="flex gap-4">
-                  <img src="edit.png" alt="edit contact icon" />
-                  <img
-                    src="delete.png"
-                    onClick={() => handleDelete(contact.id)}
-                    alt="delete icon"
-                  />
+                  <button>
+                    <img src="edit.png" alt="edit contact icon" />
+                  </button>
+
+                  <button onClick={() => handleDelete(contact.id)}>
+                    <img src="delete.png" alt="delete icon" />
+                  </button>
                 </div>
               </div>
             ))}
