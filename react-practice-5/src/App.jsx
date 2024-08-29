@@ -94,7 +94,7 @@ function App() {
   );
 
   return (
-    <div className="m-4 flex flex-col gap-[22px] max-w-[400px]">
+    <div className="m-4 flex flex-col gap-[22px] max-w-[400px] relative">
       <Navbar />
       <SearchBox
         searchQuery={searchQuery}

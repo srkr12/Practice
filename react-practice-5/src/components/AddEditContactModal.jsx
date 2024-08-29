@@ -19,7 +19,7 @@ function AddEditContactModal({ type = "add", onSubmit, onClose, initialData }) {
   };
 
   return (
-    <div className="h-[257px] rounded-[10px] bg-white p-4">
+    <div className="h-[257px] rounded-[10px] bg-white p-4 z-20 absolute top-[150px] left-[18px]">
       <form className="flex flex-col gap-[20px]" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-2">
           <label htmlFor="name">Name</label>
