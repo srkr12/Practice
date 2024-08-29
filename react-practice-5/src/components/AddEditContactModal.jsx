@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 
-function AddEditContactModal({ type = "add", onSubmit }) {
+function AddEditContactModal({ type = "add", onSubmit, onClose, initialData }) {
   // State to hold name and email input values
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState(initialData?.name || "");
+  const [email, setEmail] = useState(initialData?.email || "");
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Trigger onSubmit with current name and email values
-    onSubmit({ name, email, type });
+    if (!name || !email) {
+      alert("Both name and email are required.");
+      return;
+    }
+    // Call the onSubmit function passed as a prop with the contact details
+    onSubmit({ name, email });
   };
 
   return (
@@ -18,6 +23,7 @@ function AddEditContactModal({ type = "add", onSubmit }) {
           <label htmlFor="name">Name</label>
           <input
             type="text"
+            id="name"
             className="border-[1px] p-1 border-black h-10 rounded"
             placeholder="Enter the name"
             value={name}
@@ -29,6 +35,7 @@ function AddEditContactModal({ type = "add", onSubmit }) {
           <label htmlFor="email">Email</label>
           <input
             type="text"
+            id="email"
             className="border-[1px] p-1 border-black h-10 rounded"
             placeholder="Enter the email"
             value={email}
@@ -45,7 +52,8 @@ function AddEditContactModal({ type = "add", onSubmit }) {
           </button>
 
           <button
-            type="submit"
+            type="button"
+            onClick={onClose}
             className=" p-2 bg-[#ff2c2c] text-black rounded w-[150px]"
           >
             <p>Close</p>

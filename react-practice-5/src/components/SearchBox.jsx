@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchBox({ searchQuery, setSearchQuery }) {
+function SearchBox({ searchQuery, setSearchQuery, onAdd }) {
   const handleInputChange = (event) => {
     setSearchQuery(event.target.value);
   };
@@ -23,7 +23,10 @@ function SearchBox({ searchQuery, setSearchQuery }) {
         />
       </div>
 
-      <button className="w-[52px] bg-white rounded-[50%] p-[12px] cursor-pointer">
+      <button
+        className="w-[52px] bg-white rounded-[50%] p-[12px] cursor-pointer"
+        onClick={onAdd}
+      >
         <img className="min-w-[18px]" src="plus.png" alt="add icon" />
       </button>
     </div>

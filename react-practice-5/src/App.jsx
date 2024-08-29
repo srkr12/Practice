@@ -2,12 +2,22 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import SearchBox from "./components/SearchBox";
-import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  deleteDoc,
+  addDoc,
+  updateDoc,
+  doc,
+} from "firebase/firestore";
 import { db } from "./config/firebase";
+import AddEditContactModal from "./components/AddEditContactModal";
 
 function App() {
   const [contacts, setContacts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
+  const [currentContact, setCurrentContact] = useState(null); // State for current contact data
 
   //fetching data from backend
   useEffect(() => {
@@ -43,6 +53,35 @@ function App() {
     }
   };
 
+  // Add or Update function
+  const handleSaveContact = async (contact, id) => {
+    try {
+      if (id) {
+        // Update contact
+        const contactDoc = doc(db, "contacts", id);
+        await updateDoc(contactDoc, contact);
+        setContacts(
+          contacts.map((c) => (c.id === id ? { ...c, ...contact } : c))
+        );
+      } else {
+        // Add new contact
+        const contactsRef = collection(db, "contacts");
+        const docRef = await addDoc(contactsRef, contact);
+        setContacts([...contacts, { id: docRef.id, ...contact }]);
+      }
+      setIsModalOpen(false);
+      setCurrentContact(null); // Clear current contact data
+    } catch (error) {
+      console.error("Error saving contact:", error);
+    }
+  };
+
+  // Handle editing contact
+  const handleEdit = (contact) => {
+    setCurrentContact(contact);
+    setIsModalOpen(true);
+  };
+
   // Filter contacts based on the search query
   const filteredContacts = contacts.filter(
     (contact) =>
@@ -53,7 +92,11 @@ function App() {
   return (
     <div className="m-4 flex flex-col gap-[22px] max-w-[400px]">
       <Navbar />
-      <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <SearchBox
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        onAdd={() => setIsModalOpen(true)}
+      />
 
       <div className="contact-wrap">
         {filteredContacts.length === 0 ? (
@@ -83,7 +126,7 @@ function App() {
                 </div>
 
                 <div className="flex gap-4">
-                  <button>
+                  <button onClick={() => handleEdit(contact)}>
                     <img src="edit.png" alt="edit contact icon" />
                   </button>
 
@@ -96,6 +139,19 @@ function App() {
           </div>
         )}
       </div>
+
+      {/* Render the AddEditContactModal */}
+      {isModalOpen && (
+        <AddEditContactModal
+          type={currentContact ? "edit" : "add"}
+          onSubmit={(contact) => handleSaveContact(contact, currentContact?.id)}
+          onClose={() => {
+            setIsModalOpen(false);
+            setCurrentContact(null); // Clear current contact data when closing modal
+          }}
+          initialData={currentContact}
+        />
+      )}
     </div>
   );
 }
