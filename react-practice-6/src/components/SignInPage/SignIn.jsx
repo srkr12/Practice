@@ -10,7 +10,20 @@ function SignIn() {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent the default form submission
-    // Handle the form data here (e.g., authentication logic)
+
+    // Check if email or password is empty
+    if (!email) {
+      alert("Please enter your email.");
+      return;
+    }
+
+    if (!password) {
+      alert("Please enter your password.");
+      return;
+    }
+
+    // Proceed with form submission if all validations pass
+    alert("Form submitted successfully!");
     console.log("Form submitted with:", { email, password });
   };
 
@@ -25,7 +38,9 @@ function SignIn() {
         {/* Update the form tag to use onSubmit instead of action */}
         <form className={styles.form_content} onSubmit={handleSubmit}>
           <div className={styles.form_items}>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">
+              Email<span className="red">*</span>
+            </label>
 
             <input
               type="text"
@@ -38,7 +53,9 @@ function SignIn() {
           </div>
 
           <div className={styles.form_items}>
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">
+              Password<span className="red">*</span>
+            </label>
 
             <input
               type="password"
@@ -66,7 +83,7 @@ function SignIn() {
             {/* Button will submit the form, calling handleSubmit */}
             <button
               type="submit"
-              className={activeButton === "signIn" ? `${styles.active}` : ""}
+              className={activeButton === "signIn" ? `${styles.active} cp` : ""}
               onClick={() => setActiveButton("signIn")}
             >
               Sign In
@@ -80,7 +97,7 @@ function SignIn() {
               }
               onClick={() => setActiveButton("createAccount")}
             >
-              <Link to="/sign-up">Create New Account</Link>
+              <Link to="/">Create New Account</Link>
             </button>
           </div>
         </form>
