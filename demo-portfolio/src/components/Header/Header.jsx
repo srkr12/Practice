@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link for navigation
 import styles from "./Header.module.scss";
 
 function Header() {
@@ -8,29 +7,17 @@ function Header() {
       <img src="./images/logo.png" alt="portfolio logo" />
 
       <ul className={styles.router_links}>
-        <Link to="/about-section">
-          <li className="cp">About</li>
-        </Link>
+        <li className="cp">About</li>
 
-        <Link to="/tech-stack">
-          <li className="cp">Tech Stack</li>
-        </Link>
+        <li className="cp">Tech Stack</li>
 
-        <Link to="/experience-section">
-          <li className="cp">Experience</li>
-        </Link>
+        <li className="cp">Experience</li>
 
-        <Link to="/contact-section">
-          <li className="cp">Contact</li>
-        </Link>
+        <li className="cp">Contact</li>
 
         <img className="cp" src="./images/sun-icon.svg" alt="light mode icon" />
 
-        <a
-          href="./documents/resume.pdf"
-          download="resume.pdf"
-          className="primary_button"
-        >
+        <a href="/resume.pdf" download="resume.pdf" className="primary_button">
           <span>Resume</span>
 
           <img src="./images/download-icon.svg" alt="resume download icon" />

@@ -1,0 +1,13 @@
+.hero_container {
+  padding: 96px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+
+  .text_wrap {
+    height: 400px;
+    padding: 40px 0;
+    background-color: burlywood;
+  }
+}

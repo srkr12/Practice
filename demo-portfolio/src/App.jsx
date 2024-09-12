@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import HeroSection from "./components/HeroSection/HeroSection";
 import AboutSection from "./components/AboutSection/AboutSection";
@@ -11,17 +10,15 @@ import "./App.scss";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Header />} />
-        <Route path="/hero-section" element={<HeroSection />} />
-        <Route path="/about-section" element={<AboutSection />} />
-        <Route path="/tech-stack" element={<TechStackSection />} />
-        <Route path="/experience-section" element={<ExperienceSection />} />
-        <Route path="/contact-section" element={<ContactSection />} />
-        <Route path="/footer" element={<Footer />} />
-      </Routes>
-    </Router>
+    <>
+      <Header />
+      <HeroSection />
+      <AboutSection />
+      <TechStackSection />
+      <ExperienceSection />
+      <ContactSection />
+      <Footer />
+    </>
   );
 }
 
