@@ -26,11 +26,15 @@ function Header() {
 
         <img className="cp" src="./images/sun-icon.svg" alt="light mode icon" />
 
-        <button className="primary_button">
+        <a
+          href="./documents/resume.pdf"
+          download="resume.pdf"
+          className="primary_button"
+        >
           <span>Resume</span>
 
           <img src="./images/download-icon.svg" alt="resume download icon" />
-        </button>
+        </a>
       </ul>
 
       <div className={styles.icon_wrap}>

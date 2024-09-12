@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px;
+  border-bottom: 1px solid rgba($color: #0d1321, $alpha: 0.5);
 
   .router_links {
     display: flex;
@@ -15,7 +16,7 @@
       color: #4b5563;
     }
 
-    button {
+    a {
       display: flex;
       align-items: center;
       gap: 8px;
