@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.cp {
+  cursor: pointer;
+}
+
+// button scss
+.sea_green {
+  background-color: #10b981;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 12px;
+}
+
+.primary_button {
+  padding: 8px 16px;
+  background-color: #1e3a8a;
+  border-radius: 12px;
+  color: white;
+}
