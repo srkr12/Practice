@@ -42,6 +42,10 @@ h1 {
   color: #10b981;
 }
 
+.grey {
+  color: #4b5563;
+}
+
 // button scss
 .sea_green {
   background-color: #10b981;
@@ -55,4 +59,8 @@ h1 {
   background-color: #1e3a8a;
   border-radius: 12px;
   color: white;
+
+  &:hover {
+    background-color: #19337a;
+  }
 }

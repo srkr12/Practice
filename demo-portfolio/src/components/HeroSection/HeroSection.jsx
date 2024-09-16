@@ -5,18 +5,39 @@ function HeroSection() {
   return (
     <div className={styles.hero_container}>
       <div className={styles.text_wrap}>
-        <h1>
-          Hi, I'm "<span className="teal">Your Name</span>"
-        </h1>
+        <div className={styles.text}>
+          <h1>
+            Hi, I'm "<span className="teal">Your Name</span>"
+          </h1>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam
-          voluptate odit dolorum, earum, quidem, ex consectetur delectus ipsum
-          illum fugit quam repellat fugiat quae. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit.
-          <br />
-          Ipsum consequuntur quod iure, illo saepe voluptatibus.
-        </p>
+          <p className="grey">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam
+            voluptate odit dolorum, earum, quidem, ex consectetur delectus ipsum
+            illum fugit quam repellat fugiat quae. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit.
+          </p>
+
+          <p className="grey">
+            Ipsum consequuntur quod iure, illo saepe voluptatibus.
+          </p>
+
+          <p className="grey">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
+            repudiandae quos.
+          </p>
+        </div>
+
+        <div className={styles.location}>
+          <img src="./images/location-icon.svg" alt="location icon" />
+
+          <p className="grey">Your city, Your state, Your country</p>
+        </div>
+
+        <button className="primary_button">
+          <span>Get in touch</span>
+
+          <img src="./images/arrow-icon.svg" alt="arrow icon" />
+        </button>
       </div>
 
       <div className={styles.img_wrap}>
