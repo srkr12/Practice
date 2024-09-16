@@ -38,6 +38,21 @@ h1 {
   font-weight: 800;
 }
 
+.body2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.body2_mid {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 400;
+}
+
 .teal {
   color: #10b981;
 }
@@ -47,7 +62,7 @@ h1 {
 }
 
 // button scss
-.sea_green {
+.route_tab {
   background-color: #10b981;
   padding: 6px 12px;
   color: white;
@@ -63,4 +78,9 @@ h1 {
   &:hover {
     background-color: #19337a;
   }
+}
+
+.mid_button {
+  font-size: 16px;
+  font-weight: 600;
 }

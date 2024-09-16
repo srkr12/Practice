@@ -7,18 +7,18 @@ function Header() {
       <img src="./images/logo.png" alt="portfolio logo" />
 
       <ul className={styles.router_links}>
-        <li className="cp">About</li>
+        <li className="cp body2_mid grey">About</li>
 
-        <li className="cp">Tech Stack</li>
+        <li className="cp body2_mid grey">Tech Stack</li>
 
-        <li className="cp">Experience</li>
+        <li className="cp body2_mid grey">Experience</li>
 
-        <li className="cp">Contact</li>
+        <li className="cp body2_mid grey">Contact</li>
 
         <img className="cp" src="./images/sun-icon.svg" alt="light mode icon" />
 
         <a href="/resume.pdf" download="resume.pdf" className="primary_button">
-          <span>Resume</span>
+          <span className="mid_button">Resume</span>
 
           <img src="./images/download-icon.svg" alt="resume download icon" />
         </a>

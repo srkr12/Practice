@@ -5,7 +5,6 @@
   justify-content: center;
   gap: 48px;
   width: 100%;
-  // background-color: aquamarine;
 
   .text_wrap {
     display: flex;
@@ -14,7 +13,6 @@
     gap: 48px;
     height: fit-content;
     padding: 40px 0 40px 32px;
-    // background-color: burlywood;
 
     .location {
       display: flex;
@@ -22,8 +20,6 @@
     }
 
     button {
-      font-size: 16px;
-      font-weight: 600;
       display: flex;
       align-items: center;
     }
@@ -31,6 +27,5 @@
 
   .img_wrap {
     padding-right: 32px;
-    // background-color: burlywood;
   }
 }

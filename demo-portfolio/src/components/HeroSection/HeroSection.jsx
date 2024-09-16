@@ -10,18 +10,18 @@ function HeroSection() {
             Hi, I'm "<span className="teal">Your Name</span>"
           </h1>
 
-          <p className="grey">
+          <p className="grey body2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam
             voluptate odit dolorum, earum, quidem, ex consectetur delectus ipsum
             illum fugit quam repellat fugiat quae. Lorem ipsum dolor sit amet
             consectetur adipisicing elit.
           </p>
 
-          <p className="grey">
+          <p className="grey body2">
             Ipsum consequuntur quod iure, illo saepe voluptatibus.
           </p>
 
-          <p className="grey">
+          <p className="grey body2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
             repudiandae quos.
           </p>
@@ -30,11 +30,11 @@ function HeroSection() {
         <div className={styles.location}>
           <img src="./images/location-icon.svg" alt="location icon" />
 
-          <p className="grey">Your city, Your state, Your country</p>
+          <p className="grey body2">Your city, Your state, Your country</p>
         </div>
 
         <button className="primary_button">
-          <span>Get in touch</span>
+          <span className="mid_button">Get in touch</span>
 
           <img src="./images/arrow-icon.svg" alt="arrow icon" />
         </button>
