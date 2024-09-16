@@ -41,7 +41,7 @@ function HeroSection() {
       </div>
 
       <div className={styles.img_wrap}>
-        <img src="./images/hero-img.svg" alt="hero image" />
+        <img src="./images/hero-img.png" alt="hero image" />
       </div>
     </div>
   );
