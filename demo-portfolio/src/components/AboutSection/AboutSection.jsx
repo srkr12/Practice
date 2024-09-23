@@ -5,7 +5,7 @@ function AboutSection() {
   return (
     <div className={styles.about_sec_container}>
       <div className={styles.heading}>
-        <span className="route_tab body2_mid">About me</span>
+        <span className="route_tab body2_mid">About Me</span>
       </div>
 
       <div className={styles.content_wrap}>
