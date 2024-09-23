@@ -2,6 +2,30 @@ import React from "react";
 import styles from "./ContactSection.module.scss";
 
 function ContactSection() {
+  const handleEmailCopy = () => {
+    const emailId = "your.email@gmail.com";
+    navigator.clipboard
+      .writeText(emailId)
+      .then(() => {
+        alert("Phone email id copied to clipboard!");
+      })
+      .catch((err) => {
+        console.error("Failed to copy: ", err);
+      });
+  };
+
+  const handlePhoneCopy = () => {
+    const phoneNumber = "+91 1234567890";
+    navigator.clipboard
+      .writeText(phoneNumber)
+      .then(() => {
+        alert("Phone number copied to clipboard!");
+      })
+      .catch((err) => {
+        console.error("Failed to copy: ", err);
+      });
+  };
+
   return (
     <div className={styles.contact_container}>
       <div className={styles.heading_wrap}>
@@ -17,14 +41,28 @@ function ContactSection() {
       <div className={styles.contact_detail_wrap}>
         <div className={styles.contact_detail}>
           <img src="./images/grey-mail-icon.png" alt="mail icon" />
+
           <h2>your.email@gmail.com</h2>
-          <img src="./images/paste-icon.png" alt="paste" />
+
+          <img
+            className="cp"
+            onClick={handleEmailCopy}
+            src="./images/copy-icon.png"
+            alt="copy"
+          />
         </div>
 
         <div className={styles.contact_detail}>
           <img src="./images/phone-icon.png" alt="phone icon" />
+
           <h2>+91 1234567890</h2>
-          <img src="./images/paste-icon.png" alt="paste" />
+
+          <img
+            className="cp"
+            onClick={handlePhoneCopy}
+            src="./images/copy-icon.png"
+            alt="copy"
+          />
         </div>
       </div>
 
