@@ -42,7 +42,7 @@ function ContactSection() {
         <div className={styles.contact_detail}>
           <img src="./images/grey-mail-icon.png" alt="mail icon" />
 
-          <h2>your.email@gmail.com</h2>
+          <span className="subtitle_semi">your.email@gmail.com</span>
 
           <img
             className="cp"
@@ -55,7 +55,7 @@ function ContactSection() {
         <div className={styles.contact_detail}>
           <img src="./images/phone-icon.png" alt="phone icon" />
 
-          <h2>+91 1234567890</h2>
+          <span className="subtitle_semi">+91 1234567890</span>
 
           <img
             className="cp"
