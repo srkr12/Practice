@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import HeroSection from "./components/HeroSection/HeroSection";
 import AboutSection from "./components/AboutSection/AboutSection";
@@ -9,16 +9,22 @@ import Footer from "./components/Footer/Footer";
 import "./App.scss";
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <>
-      <Header />
+    <div className={isDarkMode ? "dark-mode" : "light-mode"}>
+      <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <HeroSection />
       <AboutSection />
       <TechStackSection />
       <ExperienceSection />
       <ContactSection />
       <Footer />
-    </>
+    </div>
   );
 }
 

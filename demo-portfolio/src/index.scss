@@ -4,6 +4,14 @@
   margin: 0;
 }
 
+:root {
+  --grey: #4b5563;
+  --seagreen: #10b981;
+  --red: #b9104b;
+  --primary-button-clr: #1e3a8a;
+  --primary-button-clr-hover: #19337a;
+}
+
 h1,
 h2,
 h3,
@@ -71,11 +79,11 @@ h2 {
 }
 
 .red {
-  color: #b9104b;
+  color: var(--red);
 }
 
 .teal {
-  color: #10b981;
+  color: var(--seagreen);
 }
 
 .cp {
@@ -83,12 +91,12 @@ h2 {
 }
 
 .grey {
-  color: #4b5563;
+  color: var(--grey);
 }
 
 // button scss
 .route_tab {
-  background-color: #10b981;
+  background-color: var(--seagreen);
   padding: 6px 12px;
   color: white;
   border-radius: 12px;
@@ -96,12 +104,12 @@ h2 {
 
 .primary_button {
   padding: 8px 16px;
-  background-color: #1e3a8a;
+  background-color: var(--primary-button-clr);
   border-radius: 12px;
   color: white;
 
   &:hover {
-    background-color: #19337a;
+    background-color: var(--primary-button-clr-hover);
   }
 }
 

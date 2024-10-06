@@ -1,21 +1,26 @@
 import React from "react";
 import styles from "./Header.module.scss";
 
-function Header() {
+function Header({ isDarkMode, toggleTheme }) {
   return (
     <header className={styles.header_container}>
-      <img src="./images/logo.png" alt="portfolio logo" />
+      <img src="./images/logo.svg" alt="portfolio logo" />
 
       <ul className={styles.router_links}>
-        <li className="cp body2_mid grey">About</li>
+        <li className="cp body2_mid">About</li>
 
-        <li className="cp body2_mid grey">Tech Stack</li>
+        <li className="cp body2_mid">Tech Stack</li>
 
-        <li className="cp body2_mid grey">Experience</li>
+        <li className="cp body2_mid">Experience</li>
 
-        <li className="cp body2_mid grey">Contact</li>
+        <li className="cp body2_mid">Contact</li>
 
-        <img className="cp" src="./images/sun-icon.svg" alt="light mode icon" />
+        <img
+          className="cp"
+          src={isDarkMode ? "./images/sun-icon.png" : "./images/moon-icon.png"}
+          alt={isDarkMode ? "light mode icon" : "dark mode icon"}
+          onClick={toggleTheme}
+        />
 
         <a href="/resume.pdf" download="resume.pdf" className="primary_button">
           <span className="mid_button">Resume</span>
