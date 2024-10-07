@@ -2,8 +2,6 @@ import React from "react";
 import styles from "./ExperienceSection.module.scss";
 
 function ExperienceSection({ isDarkMode }) {
-  console.log(styles.company);
-
   return (
     <div className={styles.experience_container} id="experience">
       <div className={styles.heading}>
