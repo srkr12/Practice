@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Footer.module.scss";
 
-function Footer() {
+function Footer({ isDarkMode }) {
   return (
     <footer className={styles.footer_container}>
-      <span className="grey">© 2024 |</span>{" "}
-      <span className="red">Demo project</span>
+      <span className={isDarkMode ? "white" : "grey"}>© 2024 |</span>{" "}
+      <span className={isDarkMode ? "teal" : "red"}>Demo project</span>
     </footer>
   );
 }

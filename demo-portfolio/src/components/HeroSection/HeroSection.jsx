@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./HeroSection.module.scss";
 
-function HeroSection() {
+function HeroSection({ isDarkMode }) {
   return (
     <div className={styles.hero_container}>
       <div className={styles.text_wrap}>
@@ -10,27 +10,36 @@ function HeroSection() {
             Hi, I'm "<span className="teal">Your Name</span>"
           </h1>
 
-          <p className="grey body2">
+          <p className={isDarkMode ? "white" : "grey body2"}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam
             voluptate odit dolorum, earum, quidem, ex consectetur delectus ipsum
             illum fugit quam repellat fugiat quae. Lorem ipsum dolor sit amet
             consectetur adipisicing elit.
           </p>
 
-          <p className="grey body2">
+          <p className={isDarkMode ? "white" : "grey body2"}>
             Ipsum consequuntur quod iure, illo saepe voluptatibus.
           </p>
 
-          <p className="grey body2">
+          <p className={isDarkMode ? "white" : "grey body2"}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
             repudiandae quos.
           </p>
         </div>
 
         <div className={styles.location}>
-          <img src="./images/location-icon.svg" alt="location icon" />
+          <img
+            src={
+              isDarkMode
+                ? "./images/location-icon-white.svg"
+                : "./images/location-icon.svg"
+            }
+            alt="location icon"
+          />
 
-          <p className="grey body2">Your city, Your state, Your country</p>
+          <p className={isDarkMode ? "white" : "grey body2"}>
+            Your city, Your state, Your country
+          </p>
         </div>
 
         <button className="primary_button">

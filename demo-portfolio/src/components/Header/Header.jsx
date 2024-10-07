@@ -4,16 +4,27 @@ import styles from "./Header.module.scss";
 function Header({ isDarkMode, toggleTheme }) {
   return (
     <header className={styles.header_container}>
-      <img src="./images/logo.svg" alt="portfolio logo" />
+      <img
+        src={isDarkMode ? "./images/logo-white.svg" : "./images/logo.svg"}
+        alt="portfolio logo"
+      />
 
       <ul className={styles.router_links}>
-        <li className="cp body2_mid">About</li>
+        <li className={`${isDarkMode ? styles.dark : ""} cp body2_mid`}>
+          About
+        </li>
 
-        <li className="cp body2_mid">Tech Stack</li>
+        <li className={`${isDarkMode ? styles.dark : ""} cp body2_mid`}>
+          Tech Stack
+        </li>
 
-        <li className="cp body2_mid">Experience</li>
+        <li className={`${isDarkMode ? styles.dark : ""} cp body2_mid`}>
+          Experience
+        </li>
 
-        <li className="cp body2_mid">Contact</li>
+        <li className={`${isDarkMode ? styles.dark : ""} cp body2_mid`}>
+          Contact
+        </li>
 
         <img
           className="cp"
@@ -30,15 +41,35 @@ function Header({ isDarkMode, toggleTheme }) {
       </ul>
 
       <div className={styles.icon_wrap}>
-        <img className="cp" src="./images/github-icon.svg" alt="github icon" />
+        <img
+          className="cp"
+          src={
+            isDarkMode
+              ? "./images/mail-icon-white.svg"
+              : "./images/mail-icon.svg"
+          }
+          alt="mail icon"
+        />
 
         <img
           className="cp"
-          src="./images/linkedin-icon.svg"
-          alt="linkedin icon"
+          src={
+            isDarkMode
+              ? "./images/github-icon-white.svg"
+              : "./images/github-icon.svg"
+          }
+          alt="github icon"
         />
 
-        <img className="cp" src="./images/mail-icon.svg" alt="mail icon" />
+        <img
+          className="cp"
+          src={
+            isDarkMode
+              ? "./images/linkedin-icon-white.svg"
+              : "./images/linkedin-icon.svg"
+          }
+          alt="linkedin icon"
+        />
       </div>
     </header>
   );

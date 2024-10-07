@@ -1,1 +1,40 @@
+.light_mode {
+  background-color: #fff;
 
+  .about_me,
+  .my_experience {
+    background-color: #f8f9fc;
+  }
+}
+
+.dark_mode {
+  background-color: #242526;
+  color: #fff;
+
+  .about_me,
+  .my_experience {
+    background-color: #3a3b3c;
+  }
+}
+
+.dark_mode {
+  .my_experience {
+    .bg {
+      background-color: #4c4d4e;
+      box-shadow: none;
+    }
+  }
+}
+
+.light_mode header {
+  background-color: #fff;
+}
+
+.dark_mode header {
+  background-color: #242526;
+  border-bottom: 1px solid rgba($color: #fff, $alpha: 0.5);
+}
+
+.dark_mode footer {
+  border-top: 1px solid rgba($color: #fff, $alpha: 0.5);
+}

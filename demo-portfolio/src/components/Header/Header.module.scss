@@ -3,9 +3,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 80px;
+  width: 100vw;
+  height: 80px;
+  position: fixed;
+  z-index: 999;
   border-bottom: 1px solid rgba($color: #0d1321, $alpha: 0.5);
-  // position: relative;
-  // z-index: 999;
 
   .router_links {
     display: flex;
@@ -16,6 +18,10 @@
       color: var(--grey);
     }
 
+    .dark {
+      color: #fff;
+    }
+
     a {
       display: flex;
       align-items: center;
@@ -23,8 +29,8 @@
     }
 
     img {
-      width: 25px;
-      height: 25px;
+      width: 20px;
+      height: 20px;
     }
   }
 

@@ -16,14 +16,18 @@ function App() {
   };
 
   return (
-    <div className={isDarkMode ? "dark-mode" : "light-mode"}>
+    <div className={isDarkMode ? "dark_mode" : "light_mode"}>
       <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-      <HeroSection />
-      <AboutSection />
-      <TechStackSection />
-      <ExperienceSection />
-      <ContactSection />
-      <Footer />
+      <HeroSection isDarkMode={isDarkMode} />
+      <div className="about_me">
+        <AboutSection isDarkMode={isDarkMode} />
+      </div>
+      <TechStackSection isDarkMode={isDarkMode} />
+      <div className="my_experience">
+        <ExperienceSection isDarkMode={isDarkMode} />
+      </div>
+      <ContactSection isDarkMode={isDarkMode} />
+      <Footer isDarkMode={isDarkMode} />
     </div>
   );
 }
