@@ -27,7 +27,7 @@ function ContactSection({ isDarkMode }) {
   };
 
   return (
-    <div className={styles.contact_container}>
+    <div className={styles.contact_container} id="contact">
       <div className={styles.heading_wrap}>
         <span className="route_tab body2_mid">Get in Touch</span>
 

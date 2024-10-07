@@ -15,7 +15,9 @@
     gap: 24px;
 
     li {
-      color: var(--grey);
+      a {
+        color: var(--grey);
+      }
     }
 
     .dark {

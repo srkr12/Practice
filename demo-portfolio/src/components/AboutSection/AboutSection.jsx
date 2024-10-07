@@ -3,7 +3,7 @@ import styles from "./AboutSection.module.scss";
 
 function AboutSection({ isDarkMode }) {
   return (
-    <div className={styles.about_sec_container}>
+    <div className={styles.about_sec_container} id="about">
       <div className={styles.heading}>
         <span className="route_tab body2_mid">About Me</span>
       </div>

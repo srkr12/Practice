@@ -5,7 +5,7 @@ function ExperienceSection({ isDarkMode }) {
   console.log(styles.company);
 
   return (
-    <div className={styles.experience_container}>
+    <div className={styles.experience_container} id="experience">
       <div className={styles.heading}>
         <span className="route_tab body2_mid">Experience</span>
 

@@ -10,20 +10,40 @@ function Header({ isDarkMode, toggleTheme }) {
       />
 
       <ul className={styles.router_links}>
-        <li className={`${isDarkMode ? styles.dark : ""} cp body2_mid`}>
-          About
+        <li>
+          <a
+            className={`${isDarkMode ? styles.dark : ""} cp body2_mid`}
+            href="#about"
+          >
+            About
+          </a>
         </li>
 
-        <li className={`${isDarkMode ? styles.dark : ""} cp body2_mid`}>
-          Tech Stack
+        <li>
+          <a
+            className={`${isDarkMode ? styles.dark : ""} cp body2_mid`}
+            href="#techstack"
+          >
+            Tech Stack
+          </a>
         </li>
 
-        <li className={`${isDarkMode ? styles.dark : ""} cp body2_mid`}>
-          Experience
+        <li>
+          <a
+            className={`${isDarkMode ? styles.dark : ""} cp body2_mid`}
+            href="#experience"
+          >
+            Experience
+          </a>
         </li>
 
-        <li className={`${isDarkMode ? styles.dark : ""} cp body2_mid`}>
-          Contact
+        <li>
+          <a
+            className={`${isDarkMode ? styles.dark : ""} cp body2_mid`}
+            href="#contact"
+          >
+            Contact
+          </a>
         </li>
 
         <img

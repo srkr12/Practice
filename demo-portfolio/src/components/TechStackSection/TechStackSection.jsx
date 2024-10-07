@@ -3,7 +3,7 @@ import styles from "./TechStackSection.module.scss";
 
 function TechStackSection({ isDarkMode }) {
   return (
-    <div className={styles.tech_container}>
+    <div className={styles.tech_container} id="techstack">
       <div className={styles.heading_wrap}>
         <span className="route_tab body2_mid">Tech Stack</span>
 
